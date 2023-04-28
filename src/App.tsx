@@ -7,7 +7,7 @@ import debounce from "just-debounce-it";
 function App() {
   const [sort, setSort] = useState(false)
   const { search, setSearch, error } = useSearch()
-  const { movies, getMovies, isLoading, error: moviesError } = useMovies(search, sort)
+  const { movies, getMovies, isLoading } = useMovies(search, sort)
 
   const debouncedGetMovies = useCallback( 
     debounce((search: string) => {
